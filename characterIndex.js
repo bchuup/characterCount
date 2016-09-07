@@ -2,17 +2,16 @@ var object = {}
 
 function countLetters(str){
   var arr = str.split(" ").join("");
-  for (var letter of arr) {
-    if (letter in object){
-    object[letter] = str.indexOf(letter)
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] in object){
+    object[arr[i]].push(i+1);
     } else {
-      object[letter] = 1
+      object[arr[i]] = [i+1]
     }
   }
   console.log(object)
   return object;
 }
-
 
 console.log(object)
 countLetters("lighthouse in the house");
